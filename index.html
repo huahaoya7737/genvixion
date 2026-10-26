@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GENVIXION — AI Semiconductor &amp; Advanced Computing</title>
+<meta name="description" content="GENVIXION is a technology company focused on AI semiconductor engineering and advanced computing research.">
+<meta property="og:title" content="GENVIXION — AI Semiconductor &amp; Advanced Computing">
+<meta property="og:description" content="Engineering the future of intelligent computing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://genvixion.com/">
+<meta property="og:image" content="https://genvixion.com/assets/img/office-render.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="canonical" href="https://genvixion.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06090F;
+  --panel:#0A111C;
+  --panel-2:#0D1522;
+  --line:rgba(110,155,255,.14);
+  --line-strong:rgba(110,155,255,.32);
+  --text:#E8EDF4;
+  --muted:#8A94A6;
+  --accent:#6E9BFF;
+  --accent-dim:rgba(110,155,255,.12);
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --disp:'Archivo',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--accent);color:#06090F}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 32px;
+  background:linear-gradient(rgba(6,9,15,.85),rgba(6,9,15,0));
+  backdrop-filter:blur(6px);
+}
+.wordmark{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.34em;
+  color:var(--text);
+}
+.wordmark span{color:var(--accent)}
+.topbar nav{display:flex;gap:28px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em}
+.topbar nav a{color:var(--muted);transition:color .25s}
+.topbar nav a:hover,.topbar nav a:focus-visible{color:var(--text)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;
+  display:grid;place-items:center;
+  padding:120px 24px 80px;
+  overflow:hidden;
+}
+.hero-circuit{position:absolute;inset:0;z-index:0;opacity:.9}
+.hero-inner{position:relative;z-index:1;text-align:center;max-width:1100px;margin:0 auto}
+.hero-kicker{
+  font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--muted);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:34px;
+}
+.hero-kicker::before,.hero-kicker::after{
+  content:"";width:26px;height:1px;background:var(--line-strong);
+}
+h1.brand{
+  font-family:var(--disp);font-weight:900;
+  font-size:clamp(56px,11.5vw,168px);
+  letter-spacing:.06em;line-height:1;color:var(--text);
+}
+h1.brand em{font-style:normal;color:var(--accent)}
+.hero-tag{
+  margin:36px auto 0;max-width:560px;
+  font-size:clamp(16px,2vw,20px);font-weight:300;color:#B9C2D2;
+}
+.hero-tag strong{font-weight:400;color:var(--text)}
+.scroll-cue{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:10px;z-index:1;
+}
+.scroll-cue::after{
+  content:"";width:1px;height:44px;
+  background:linear-gradient(var(--accent),transparent);
+  animation:cue 2.6s ease-in-out infinite;
+}
+@keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* circuit draw-in */
+.circuit path,.circuit circle,.circuit rect{
+  stroke-dasharray:1200;stroke-dashoffset:1200;
+  animation:draw 2.8s cubic-bezier(.4,0,.2,1) forwards;
+}
+.circuit circle{stroke-dasharray:80;stroke-dashoffset:80;animation-delay:1.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- shared section ---------- */
+.section{position:relative;padding:110px 32px}
+.wrap{max-width:1080px;margin:0 auto}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--accent);
+  margin-bottom:14px;display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:"";width:20px;height:1px;background:var(--line-strong)}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:.02em;line-height:1.15}
+.sub{color:var(--muted);max-width:620px;margin-top:16px;font-size:16px}
+
+/* ---------- office / space section ---------- */
+.space{background:var(--panel)}
+.gallery{
+  margin-top:56px;display:grid;
+  grid-template-columns:repeat(12,1fr);gap:14px;
+}
+figure.ph{position:relative;overflow:hidden;border-radius:4px;background:var(--panel-2)}
+figure.ph img{
+  width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;
+  filter:saturate(.88) contrast(1.02);transition:filter .5s,transform .5s;
+}
+figure.ph:hover img{filter:saturate(1);transform:scale(1.015)}
+figure.ph figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:12px 16px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:#C6CEDA;
+  background:linear-gradient(transparent,rgba(6,9,15,.88));
+}
+.ph-a{grid-column:span 7}
+.ph-b{grid-column:span 5}
+.ph-c{grid-column:span 4}
+.ph-d{grid-column:span 4}
+.ph-e{grid-column:span 4}
+.space-quote{
+  margin-top:64px;text-align:center;
+  font-family:var(--disp);font-weight:500;font-size:clamp(20px,2.6vw,28px);
+  letter-spacing:.04em;color:#C6CEDA;
+}
+.space-quote em{font-style:normal;color:var(--accent)}
+
+/* ---------- focus section ---------- */
+.focus-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.focus{
+  background:var(--bg);padding:44px 32px 48px;position:relative;
+  transition:background .4s;
+}
+.focus:hover{background:var(--panel-2)}
+.focus .idx{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em}
+.focus h3{
+  font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:.03em;
+  margin:18px 0 12px;
+}
+.focus p{color:var(--muted);font-size:14.5px}
+.focus::after{
+  content:"";position:absolute;top:0;left:32px;width:34px;height:1px;
+  background:var(--accent);opacity:0;transition:opacity .4s;
+}
+.focus:hover::after{opacity:1}
+
+/* ---------- closing ---------- */
+.closing{position:relative;padding:140px 32px;text-align:center;overflow:hidden}
+.closing .brand-echo{
+  font-family:var(--disp);font-weight:900;
+  font-size:clamp(40px,7.5vw,104px);letter-spacing:.1em;
+  color:transparent;-webkit-text-stroke:1px rgba(232,237,244,.5);
+}
+.closing .brand-echo em{
+  font-style:normal;color:var(--accent);-webkit-text-stroke:0;
+}
+.closing .manifesto{
+  margin:28px auto 0;max-width:480px;color:var(--muted);font-size:15px;
+}
+footer{
+  border-top:1px solid var(--line);
+  padding:34px 32px 44px;
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);
+}
+footer .foot-brand{color:#B9C2D2;letter-spacing:.3em}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.reveal.on{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .focus-grid{grid-template-columns:1fr}
+  .ph-a,.ph-b,.ph-c,.ph-d,.ph-e{grid-column:span 12}
+  .topbar nav{gap:18px}
+}
+@media (max-width:600px){
+  .section{padding:80px 20px}
+  .topbar{padding:16px 20px}
+  .topbar nav{font-size:10.5px;gap:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .circuit path,.circuit circle,.circuit rect{animation:none;stroke-dashoffset:0}
+  .scroll-cue::after{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  figure.ph img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="wordmark" href="#top" aria-label="GENVIXION home">GENVI<span>X</span>ION</a>
+  <nav aria-label="Sections">
+    <a href="#space">Space</a>
+    <a href="#focus">Focus</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <svg class="hero-circuit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+      <g class="circuit" stroke="rgba(110,155,255,.34)" stroke-width="1.2">
+        <!-- left traces -->
+        <path d="M0 180 H340 L400 240 H560"/>
+        <path d="M0 260 H260 L320 320 H560"/>
+        <path d="M0 640 H300 L360 700 H520"/>
+        <path d="M0 720 H200 L260 780 H520"/>
+        <path d="M120 0 V120 L180 180"/>
+        <path d="M60 900 V760 L120 700"/>
+        <!-- right traces -->
+        <path d="M1440 140 H1080 L1020 200 H880"/>
+        <path d="M1440 240 H1140 L1080 300 H880"/>
+        <path d="M1440 660 H1160 L1100 720 H920"/>
+        <path d="M1440 760 H1060 L1000 820 H920"/>
+        <path d="M1320 0 V100 L1260 160"/>
+        <path d="M1380 900 V820 L1320 760"/>
+        <!-- inner frame -->
+        <rect x="560" y="240" width="320" height="420" rx="6"/>
+        <path d="M560 380 H430"/>
+        <path d="M880 480 H1010"/>
+        <path d="M700 660 V790"/>
+      </g>
+      <g class="circuit" fill="rgba(110,155,255,.5)">
+        <circle cx="400" cy="240" r="3"/>
+        <circle cx="320" cy="320" r="3"/>
+        <circle cx="360" cy="700" r="3"/>
+        <circle cx="260" cy="780" r="3"/>
+        <circle cx="1020" cy="200" r="3"/>
+        <circle cx="1080" cy="300" r="3"/>
+        <circle cx="1100" cy="720" r="3"/>
+        <circle cx="1000" cy="820" r="3"/>
+        <circle cx="430" cy="380" r="3"/>
+        <circle cx="1010" cy="480" r="3"/>
+        <circle cx="700" cy="790" r="3"/>
+      </g>
+    </svg>
+    <div class="hero-inner">
+      <p class="hero-kicker">AI&nbsp;SEMICONDUCTOR&nbsp;·&nbsp;ADVANCED&nbsp;COMPUTING</p>
+      <h1 class="brand">GENVI<em>X</em>ION</h1>
+      <p class="hero-tag">Engineering the future of <strong>intelligent computing</strong> — silicon, systems, and the discipline of precision.</p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">SCROLL</div>
+  </section>
+
+  <!-- ============ SPACE ============ -->
+  <section class="section space" id="space">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">THE&nbsp;SPACE</p>
+        <h2>A space built for what comes next.</h2>
+        <p class="sub">Quiet rooms, sharp focus. An environment designed for deep engineering work.</p>
+      </div>
+      <div class="gallery">
+        <figure class="ph ph-a reveal"><img src="assets/img/office-render.jpg" alt="Open work area with warm lighting and clean lines" loading="lazy"><figcaption>OPEN&nbsp;WORK&nbsp;AREA</figcaption></figure>
+        <figure class="ph ph-b reveal"><img src="assets/img/office-6.jpg" alt="Open office with rows of desks" loading="lazy"><figcaption>OPEN&nbsp;OFFICE</figcaption></figure>
+        <figure class="ph ph-c reveal"><img src="assets/img/office-1.jpg" alt="Focused work pods" loading="lazy"><figcaption>FOCUS&nbsp;PODS</figcaption></figure>
+        <figure class="ph ph-d reveal"><img src="assets/img/office-2.jpg" alt="Meeting room" loading="lazy"><figcaption>MEETING&nbsp;ROOM</figcaption></figure>
+        <figure class="ph ph-e reveal"><img src="assets/img/office-5.jpg" alt="Lounge and pantry area" loading="lazy"><figcaption>LOUNGE</figcaption></figure>
+      </div>
+      <p class="space-quote reveal">Precision is a habit, <em>not an event.</em></p>
+    </div>
+  </section>
+
+  <!-- ============ FOCUS ============ -->
+  <section class="section" id="focus">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">FOCUS</p>
+        <h2>Three directions. One discipline.</h2>
+      </div>
+      <div class="focus-grid">
+        <div class="focus reveal">
+          <span class="idx">COMPUTE</span>
+          <h3>AI Computing</h3>
+          <p>Architectures for intelligent workloads — from the ground up.</p>
+        </div>
+        <div class="focus reveal">
+          <span class="idx">SILICON</span>
+          <h3>Semiconductor Engineering</h3>
+          <p>Careful design, careful verification. No shortcuts to silicon.</p>
+        </div>
+        <div class="focus reveal">
+          <span class="idx">RESEARCH</span>
+          <h3>Next-Generation Technology</h3>
+          <p>Research aimed at what computing becomes next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="closing" id="contact">
+    <div class="wrap reveal">
+      <p class="eyebrow" style="justify-content:center">GENVIXION</p>
+      <p class="brand-echo">GENVI<em>X</em>ION</p>
+      <p class="manifesto">We build quietly, so intelligence can run loudly.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="foot-brand">GENVIXION</span>
+  <span>© 2026 GENVIXION. ALL RIGHTS RESERVED.</span>
+</footer>
+
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (rm || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
