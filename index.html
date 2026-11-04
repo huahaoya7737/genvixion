@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GENVIXION — AI Semiconductor &amp; Advanced Computing</title>
-<meta name="description" content="GENVIXION is a technology company focused on AI semiconductor engineering and advanced computing research.">
+<meta name="description" content="GENVIXION is a technology company focused on AI semiconductor engineering and advanced computing research, with a view across the layers of intelligent computing — from silicon to applications.">
 <meta property="og:title" content="GENVIXION — AI Semiconductor &amp; Advanced Computing">
 <meta property="og:description" content="Engineering the future of intelligent computing.">
 <meta property="og:type" content="website">
@@ -229,26 +229,159 @@ footer{
 }
 footer .foot-brand{color:var(--text);letter-spacing:.3em}
 
+/* ---------- shared: new section header & note ---------- */
+.sec-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.sec-head .sub{margin-top:0;justify-self:end;max-width:420px}
+.note{margin-top:28px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8A99B0}
+.idx{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent)}
+
+/* ---------- applications ---------- */
+.apps{
+  background:linear-gradient(180deg,var(--bg-soft) 0%,#FFFFFF 100%);
+  border-top:1px solid var(--line);
+}
+.app-grid{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.app-card{
+  background:#FFFFFF;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(23,43,77,.04),0 12px 32px -18px rgba(23,78,166,.22);
+  transition:border-color .35s,box-shadow .35s,transform .35s;
+}
+.app-card:hover{border-color:var(--accent-light);transform:translateY(-3px);box-shadow:0 1px 2px rgba(23,43,77,.04),0 20px 40px -18px rgba(52,120,212,.35)}
+.app-media{aspect-ratio:16/10;overflow:hidden;background:var(--panel-2);border-bottom:1px solid var(--line)}
+.app-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.app-card:hover .app-media img{transform:scale(1.03)}
+.app-body{padding:22px 26px 26px}
+.app-body h3,.innov-body h3{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:.02em;color:var(--brand);margin:10px 0 6px}
+.app-body p,.innov-body p{color:var(--muted);font-size:15px}
+
+/* ---------- silicon strip ---------- */
+.strip{
+  position:relative;padding:96px 32px;
+  background:
+    linear-gradient(90deg,rgba(243,247,252,.96) 0%,rgba(243,247,252,.75) 38%,rgba(243,247,252,0) 62%),
+    url(assets/img/visuals/silicon-wafer.svg) right center/auto 100% no-repeat,
+    var(--bg-soft);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.strip-line{
+  font-family:var(--disp);font-weight:500;font-size:clamp(22px,3vw,34px);
+  line-height:1.25;letter-spacing:.01em;color:var(--brand);max-width:15em;
+}
+
+/* ---------- technology ---------- */
+.tech{
+  background:
+    radial-gradient(45% 55% at 78% 50%,rgba(139,184,240,.18),rgba(139,184,240,0) 70%),
+    #FFFFFF;
+}
+.tech-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.tech-quote{
+  margin-top:28px;padding-left:18px;border-left:2px solid var(--accent);
+  font-size:18px;line-height:1.6;color:var(--text);max-width:30em;
+}
+.stack{list-style:none;display:flex;flex-direction:column;gap:26px}
+.layer{
+  position:relative;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:auto 28px minmax(0,1fr);gap:18px;align-items:center;
+  padding:20px 24px;border-radius:10px;
+  background:linear-gradient(90deg,#FFFFFF 0%,var(--bg-soft) 100%);
+  border:1px solid var(--line);
+  transition:border-color .35s,box-shadow .35s;
+}
+.layer.l4{width:85%}
+.layer.l3{width:90%}
+.layer.l2{width:95%}
+.layer.l1{
+  background:linear-gradient(90deg,#EAF2FC 0%,#DCEAFB 100%);
+  border-color:var(--accent-light);
+  box-shadow:0 14px 34px -16px rgba(52,120,212,.45);
+}
+.layer:hover{border-color:var(--accent);box-shadow:0 10px 28px -16px rgba(52,120,212,.4)}
+.layer:not(:last-child)::after{
+  content:"";position:absolute;left:50%;top:100%;width:1px;height:26px;
+  background:linear-gradient(var(--accent-light),var(--accent));
+}
+.layer:not(:last-child)::before{
+  content:"";position:absolute;left:calc(50% - 3px);top:calc(100% + 23px);width:7px;height:7px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 4px rgba(52,120,212,.15);
+}
+.l-idx{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--accent);white-space:nowrap}
+.l-ico{width:26px;height:26px;fill:none;stroke:var(--brand);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.l-txt{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;min-width:0}
+.l-txt strong{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.02em;color:var(--brand)}
+.l-txt em{font-style:normal;font-size:14px;color:var(--muted)}
+
+/* ---------- innovation ---------- */
+.innov{
+  background:linear-gradient(180deg,var(--bg-soft) 0%,var(--panel-2) 100%);
+  border-top:1px solid var(--line);
+}
+.innov-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.innov-card{
+  position:relative;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  transition:border-color .35s,transform .35s,box-shadow .35s;
+}
+.innov-card::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-light));
+  transform:scaleX(0);transform-origin:left;transition:transform .5s ease;
+}
+.innov-card:hover{border-color:var(--accent-light);transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(52,120,212,.35)}
+.innov-card:hover::after{transform:scaleX(1)}
+.innov-media{aspect-ratio:16/11;overflow:hidden;border-bottom:1px solid var(--line)}
+.innov-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.innov-card:hover .innov-media img{transform:scale(1.03)}
+.innov-body{padding:20px 24px 26px}
+.innov-body h3{margin-top:0}
+
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
 .reveal.on{opacity:1;transform:none}
 
+@media (max-width:1080px){
+  .topbar nav{gap:20px}
+  .innov-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+}
 @media (max-width:900px){
   .focus-grid{grid-template-columns:1fr}
   .ph-a,.ph-b,.ph-c,.ph-d,.ph-e{grid-column:span 12}
-  .topbar nav{gap:18px}
+  /* nav drops to its own row and scrolls sideways if needed */
+  .topbar{flex-wrap:wrap;row-gap:10px}
+  .topbar nav{
+    order:3;width:100%;gap:22px;overflow-x:auto;white-space:nowrap;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px;
+    -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);
+  }
+  .topbar nav::-webkit-scrollbar{display:none}
+  .sec-head{grid-template-columns:1fr}
+  .sec-head .sub{justify-self:start}
+  .tech-grid{grid-template-columns:1fr;gap:48px}
+  .innov-grid{grid-template-columns:1fr;max-width:560px}
+  .strip{background:
+    linear-gradient(180deg,rgba(243,247,252,.94) 0%,rgba(243,247,252,.8) 100%),
+    url(assets/img/visuals/silicon-wafer.svg) 70% center/cover no-repeat,var(--bg-soft)}
 }
 @media (max-width:600px){
   .section{padding:80px 20px}
-  .topbar{padding:16px 20px}
-  .topbar nav{font-size:10.5px;gap:14px}
+  .strip{padding:72px 20px}
+  .topbar{padding:14px 20px 10px}
+  .topbar nav{font-size:10.5px;gap:18px}
+  .hero{padding-top:140px}
+  h1.brand{font-size:clamp(36px,11vw,168px);letter-spacing:.04em}
+  .hero-kicker{font-size:10px;letter-spacing:.12em}
+  .hero-kicker::before,.hero-kicker::after{display:none}
+  .app-grid{grid-template-columns:1fr;gap:18px}
+  .layer,.layer.l4,.layer.l3,.layer.l2{width:100%}
+  .layer{grid-template-columns:26px minmax(0,1fr);padding:16px 18px;gap:14px}
+  .l-idx{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .circuit path,.circuit circle,.circuit rect{animation:none;stroke-dashoffset:0}
   .scroll-cue::after{animation:none}
   .reveal{opacity:1;transform:none;transition:none}
-  figure.ph img{transition:none}
+  figure.ph img,.app-media img,.innov-media img{transition:none}
 }
 </style>
 </head>
@@ -259,6 +392,9 @@ footer .foot-brand{color:var(--text);letter-spacing:.3em}
   <nav aria-label="Sections">
     <a href="#space">Space</a>
     <a href="#focus">Focus</a>
+    <a href="#applications">Applications</a>
+    <a href="#technology">Technology</a>
+    <a href="#innovation">Innovation</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -353,6 +489,132 @@ footer .foot-brand{color:var(--text);letter-spacing:.3em}
           <h3>Next-Generation Technology</h3>
           <p>Research aimed at what computing becomes next.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPLICATIONS ============ -->
+  <section class="section apps" id="applications">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="eyebrow">APPLICATIONS</p>
+          <h2>Where computing meets intelligence.</h2>
+        </div>
+        <p class="sub">AI semiconductors sit beneath the systems that are changing how the world computes, moves and works.</p>
+      </div>
+      <div class="app-grid">
+        <article class="app-card reveal">
+          <div class="app-media"><img src="assets/img/visuals/ai-infrastructure.svg" alt="Illustration of server racks linked by a network" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="app-body">
+            <span class="idx">INFRASTRUCTURE</span>
+            <h3>AI Infrastructure</h3>
+            <p>Powering intelligent computing at scale.</p>
+          </div>
+        </article>
+        <article class="app-card reveal">
+          <div class="app-media"><img src="assets/img/visuals/robotics-automation.svg" alt="Illustration of a robotic arm above a conveyor" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="app-body">
+            <span class="idx">AUTOMATION</span>
+            <h3>Robotics &amp; Automation</h3>
+            <p>Bringing intelligence into physical systems.</p>
+          </div>
+        </article>
+        <article class="app-card reveal">
+          <div class="app-media"><img src="assets/img/visuals/intelligent-mobility.svg" alt="Top-down illustration of a vehicle with a sensing field on a road" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="app-body">
+            <span class="idx">MOBILITY</span>
+            <h3>Intelligent Mobility</h3>
+            <p>Enabling next-generation mobility experiences.</p>
+          </div>
+        </article>
+        <article class="app-card reveal">
+          <div class="app-media"><img src="assets/img/visuals/edge-intelligence.svg" alt="Illustration of an edge computing module connected to devices" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="app-body">
+            <span class="idx">EDGE</span>
+            <h3>Edge Intelligence</h3>
+            <p>Bringing computing closer to where data is created.</p>
+          </div>
+        </article>
+      </div>
+      <p class="note reveal">Industry application areas, shown for context.</p>
+    </div>
+  </section>
+
+  <!-- ============ SILICON STRIP ============ -->
+  <section class="strip" aria-label="Silicon in detail">
+    <div class="wrap reveal">
+      <p class="eyebrow">SILICON&nbsp;IN&nbsp;DETAIL</p>
+      <p class="strip-line">Every intelligent system begins as a pattern on a wafer.</p>
+    </div>
+  </section>
+
+  <!-- ============ TECHNOLOGY ============ -->
+  <section class="section tech" id="technology">
+    <div class="wrap tech-grid">
+      <div class="tech-copy reveal">
+        <p class="eyebrow">TECHNOLOGY</p>
+        <h2>The architecture of intelligent computing.</h2>
+        <p class="tech-quote">Intelligence is built across layers — from silicon architecture to real-world applications.</p>
+        <p class="note">A general reference model of the AI computing stack.</p>
+      </div>
+      <ol class="stack reveal" aria-label="AI computing stack, from application layer down to silicon layer">
+        <li class="layer l4">
+          <span class="l-idx">LAYER&nbsp;04</span>
+          <svg class="l-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 20h8M12 17v3M7 12l3-3 2 2 4-4"/></svg>
+          <span class="l-txt"><strong>Application Layer</strong><em>AI Applications</em></span>
+        </li>
+        <li class="layer l3">
+          <span class="l-idx">LAYER&nbsp;03</span>
+          <svg class="l-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+          <span class="l-txt"><strong>Software Layer</strong><em>AI Frameworks &amp; Compilers</em></span>
+        </li>
+        <li class="layer l2">
+          <span class="l-idx">LAYER&nbsp;02</span>
+          <svg class="l-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+          <span class="l-txt"><strong>Compute Layer</strong><em>CPU / GPU / NPU</em></span>
+        </li>
+        <li class="layer l1">
+          <span class="l-idx">LAYER&nbsp;01</span>
+          <svg class="l-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+          <span class="l-txt"><strong>Silicon Layer</strong><em>SoC &amp; Semiconductor Design</em></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ INNOVATION ============ -->
+  <section class="section innov" id="innovation">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="eyebrow">INNOVATION</p>
+          <h2>The future of computing.</h2>
+        </div>
+        <p class="sub">Three directions shaping what computing becomes.</p>
+      </div>
+      <div class="innov-grid">
+        <article class="innov-card reveal">
+          <div class="innov-media"><img src="assets/img/visuals/ai-at-scale.svg" alt="Abstract illustration of a dense field of computing nodes and data flows" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="innov-body">
+            <h3>AI at Scale</h3>
+            <p>The evolution of large-scale AI computing.</p>
+          </div>
+        </article>
+        <article class="innov-card reveal">
+          <div class="innov-media"><img src="assets/img/visuals/efficient-computing.svg" alt="Abstract illustration of a chip die and a power waveform" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="innov-body">
+            <h3>Efficient Computing</h3>
+            <p>Balancing performance, power and efficiency.</p>
+          </div>
+        </article>
+        <article class="innov-card reveal">
+          <div class="innov-media"><img src="assets/img/visuals/intelligent-systems.svg" alt="Abstract illustration of a neural network above a hardware board" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="innov-body">
+            <h3>Intelligent Systems</h3>
+            <p>Connecting hardware, software and intelligent applications.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
